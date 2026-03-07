@@ -263,7 +263,7 @@ img{
   justify-self: center;
 }
 .about__img img{
-  width: 200px;
+  width: 260px;
   border-radius: .5rem;
 }
 
@@ -361,6 +361,98 @@ img{
   transform: scale(1.1);
 }
 
+/* Uniform gallery sizing */
+.gallery-grid{
+  gap: 1rem;
+}
+.gallery-item img{
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  border-radius: .5rem;
+}
+/* Tighten spacing for celebration gallery */
+#celebration .work__container{row-gap:.75rem;grid-template-rows:auto}
+#celebration .gallery-grid{gap:1rem}
+#celebration .bd-grid{grid-column-gap:1.5rem}
+#celebration{padding-top:1rem;padding-left:1rem}
+#celebration .gallery-grid{margin-bottom:0}
+#celebration .fullwidth-section{margin-top:0.25rem}
+#celebration .bd-grid{max-width:980px;margin-left:auto;margin-right:auto}
+#celebration video{max-height:360px;height:auto}
+#celebration .gallery-grid .gallery-item:nth-child(-n+4){height:300px}
+#celebration .gallery-grid .gallery-item:nth-child(-n+4) img{height:100%;object-fit:cover}
+@media screen and (min-width: 768px){
+  .gallery-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery-item img{
+    height: 280px;
+  }
+  #celebration .work__container{column-gap:0.75rem}
+  #celebration .gallery-grid{grid-template-columns: repeat(4, 1fr);}
+  #celebration .gallery-grid .gallery-item:nth-child(-n+4){grid-column:auto}
+  #celebration .gallery-grid .gallery-item:nth-child(-n+4){height:360px}
+  #celebration .gallery-grid .gallery-item:nth-child(-n+4) img{height:100%}
+}
+@media screen and (min-width: 1024px){
+  .gallery-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .gallery-item img{
+    height: 300px;
+  }
+  #celebration .gallery-grid .gallery-item:nth-child(-n+4){grid-column:auto}
+  #celebration .gallery-grid .gallery-item:nth-child(-n+4){height:420px}
+  #celebration .gallery-grid .gallery-item:nth-child(-n+4) img{height:100%}
+}
+
+/* Full-width images with side padding */
+.fullwidth-section{
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.fullwidth-section img{
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+}
+/* Remove borders/shadows for clean images in galleries and fullwidth sections */
+.gallery-grid .work__img{
+  box-shadow: none !important;
+  border: none !important;
+}
+.gallery-item img{
+  border: none !important;
+}
+.fullwidth-section img{
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Show full content for the first four images and keep equal height */
+#celebration .gallery-grid .gallery-item:nth-child(-n+4) img{object-fit:contain}
+/* Remove hover zoom on celebration images to keep visual height consistent */
+#celebration .work__img img{transition:none}
+#celebration .work__img img:hover{transform:none}
+
+/* Simple image lightbox */
+.imglightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:1000;padding:1rem}
+.imglightbox-overlay.active{display:flex}
+.imglightbox-modal{position:relative;max-width:min(1200px,95vw);max-height:92vh}
+.imglightbox-img{max-width:100%;max-height:92vh;object-fit:contain;border-radius:.5rem}
+.imglightbox-close{position:absolute;top:-10px;right:-10px;width:40px;height:40px;border:none;border-radius:50%;background:rgba(255,255,255,.9);color:#333;font-size:26px;cursor:pointer;line-height:40px}
+
+/* Remove blue focus outlines while lightbox is open */
+body.imglightbox-open .section-title::after,
+body.imglightbox-open .nav__link::after,
+body.imglightbox-open .active::after { display:none !important }
+.imglightbox-overlay, .imglightbox-overlay * { outline:none !important; -webkit-tap-highlight-color:transparent }
+#celebration .gallery-grid .gallery-item img { outline:none }
+
 /* Work section centered with equal side spacing */
 #work {
   max-width: 1100px;
@@ -375,6 +467,14 @@ img{
   margin: 0;
   padding: 0;
 }
+#idcards{padding-bottom:1.5rem !important}
+#idcards .section-title{margin-bottom:0 !important}
+#idcards .gallery-grid{margin-bottom:0 !important}
+#idcards{margin-bottom:0 !important}
+#work{padding-top:2rem !important}
+#work{margin-top:0 !important}
+#work .section-title{margin-top:0 !important;margin-bottom:0 !important}
+#work .about__container{margin-top:0 !important}
 
 /* Mobile heading/date centering reinforcement */
 @media screen and (max-width: 767px){
@@ -539,12 +639,16 @@ img{
     text-align: initial;
   }
   .about__img img{
-    width: 300px;
+    width: 380px;
   }
   .work__container{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2,1fr);
     column-gap: 2rem;
+  }
+  /* Memories grid should not reserve a second empty row */
+  #idcards .work__container{
+    grid-template-rows: none;
   }
   .contact__form{
     width: 360px;

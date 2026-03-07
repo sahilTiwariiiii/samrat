@@ -415,3 +415,34 @@ sr.reveal('.skills__img',{delay: 600});
   });
 })();
 
+/* ===== Celebration Gallery Lightbox ===== */
+(() => {
+  const overlay = document.getElementById('imgLightbox');
+  const imgEl = document.getElementById('imgLightboxImg');
+  const closeBtn = document.getElementById('imgLightboxClose');
+  const thumbs = document.querySelectorAll('#celebration .gallery-grid .gallery-item img');
+  if (!overlay || !imgEl || !closeBtn || !thumbs.length) return;
+
+  function open(src, alt) {
+    imgEl.src = src;
+    imgEl.alt = alt || 'Preview';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('imglightbox-open');
+  }
+  function close() {
+    overlay.classList.remove('active');
+    imgEl.src = '';
+    document.body.style.overflow = '';
+    document.body.classList.remove('imglightbox-open');
+  }
+
+  thumbs.forEach(t => {
+    t.style.cursor = 'zoom-in';
+    t.addEventListener('click', () => open(t.src, t.alt));
+  });
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('active')) close(); });
+})();
+
