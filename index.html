@@ -40,7 +40,7 @@
         <main class="l-main">
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title" style="margin-top: 11%;">Hi, I'm <span class="home__title-color" style="display: inline-block;">Sahil Tiwari</span><br>Software Engineer</h1>
+                    <h1 class="home__title">Hi, I'm <span class="home__title-color" style="display: inline-block;">Sahil Tiwari</span><br>Software Engineer</h1>
                     <p class="home__subtitle" style="font-size: 1.1rem; margin-top: 10px;">
                       Full-Stack Developer
                       </p>
@@ -51,11 +51,17 @@
                     <span class="button resume-button-disabled" aria-disabled="true">Resume</span>
                 </div>                
 
+                <div class="home__img">
+                    <div class="home__img-wrapper">
+                        <img src="assets/src/heroimage.jpeg" alt="Sahil Tiwari - Software Engineer">
+                    </div>
+                </div>
+
                 <div class="home__social" style="margin-top: 2%;">
                     <a href="https://www.linkedin.com/in/striiver/" target="blank" class="home__social-icon"><i class='bx bxl-linkedin'></i> Linkedin</a>
                     <a href="https://github.com/sahilTiwariiii" target="blank" class="home__social-icon"><i class='bx bxl-github' ></i> Github</a>
                     <a href="https://x.com/sahil_tiwa96610" target="_blank" class="home__social-icon">
-                        <span class="iconify" data-icon="ri:twitter-x-fill"  font-size: 24px;"></span> Twitter
+                        <span class="iconify" data-icon="ri:twitter-x-fill" style="font-size: 24px;"></span> Twitter
                       </a>
                       
                     <a href="https://www.geeksforgeeks.org/user/sahiltiwnbyj/" target="blank" class="home__social-icon"><span class="iconify" data-icon="simple-icons:geeksforgeeks"></span> Geeksforgeeks</a>
@@ -63,13 +69,13 @@
                         <span class="iconify" data-icon="simple-icons:leetcode"></span> LeetCode
                       </a>
                       <a href="https://www.naukri.com/code360/profile/sahil1234" target="_blank" class="home__social-icon">
-                        <span class="iconify" data-icon="simple-icons:codingninjas"  font-size: 24px;"></span> Coding
+                        <span class="iconify" data-icon="simple-icons:codingninjas" style="font-size: 24px;"></span> Coding
                       </a>
                       
 
                    
                       <a href="https://devstiwari.netlify.app/" target="_blank" class="home__social-icon">
-                        <span class="iconify" data-icon="mdi:web"  font-size: 24px;"></span> Portfolio
+                        <span class="iconify" data-icon="mdi:web" style="font-size: 24px;"></span> Portfolio
                       </a>
                       
                 </div>
@@ -285,250 +291,346 @@
                 </div>
             </section>
 
-            <!--===== WORK =====-->
+            <!--===== WORK / PROJECTS =====-->
             <section class="work section" id="project">
                 <h2 class="section-title">Projects</h2>
 
                 <div class="work__container bd-grid">
                     <!-- Nepoora Project Card -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Nepoora - Multi-Vendor E-commerce Marketplace</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/nepoora.png" alt="Nepoora marketplace preview"></div>
-                        <br />
-                        <div>
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="https://nepoora.com/" target="_blank" rel="noopener noreferrer">Live Link</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
-                                Developed a scalable customer-facing e-commerce platform supporting product discovery, search, filtering, cart, wishlist, coupons, rewards, checkout, order tracking, and seller onboarding with KYC. Implemented secure authentication with email/phone and Google/Facebook social login, guest-cart handling with post-login data merging, and multilingual support across English, Nepali, and Arabic with RTL.<br /><br />
-                                Built an integrated checkout experience supporting <strong>Khalti, eSewa, Connect IPS, and Cash on Delivery</strong>, along with reward coins, coupons, discounts, and payment verification flows. Implemented seller registration, product variants, reviews, refunds, support tickets, referrals, and account management while integrating backend APIs for catalog, orders, payments, vendors, and fulfillment.<br /><br />
-                                Improved frontend performance using <strong>React.lazy/Suspense code splitting, Vite manual chunking, React Query caching, lazy-loaded images, conditional API queries, skeleton loaders, and optimized production builds</strong>, reducing unnecessary API calls and improving initial page loading and overall responsiveness.
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Nepoora - Multi-Vendor E-commerce Marketplace</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/nepoora.png" alt="Nepoora marketplace preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://nepoora.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Developed a scalable customer-facing e-commerce platform supporting product discovery, search, filtering, cart, wishlist, coupons, rewards, checkout, order tracking, and seller onboarding with KYC.
                             </p>
+                            <div class="project-card__details" id="details-nepoora" hidden>
+                                <p class="project-card__para">
+                                    <strong>Nepoora — Multi-Vendor E-commerce Marketplace:</strong> Developed a scalable customer-facing e-commerce platform supporting product discovery, search, filtering, cart, wishlist, coupons, rewards, checkout, order tracking, and seller onboarding with KYC. Implemented secure authentication with email/phone and Google/Facebook social login, guest-cart handling with post-login data merging, and multilingual support across English, Nepali, and Arabic with RTL.
+                                </p>
+                                <p class="project-card__para">
+                                    Built an integrated checkout experience supporting <strong>Khalti, eSewa, Connect IPS, and Cash on Delivery</strong>, along with reward coins, coupons, discounts, and payment verification flows. Implemented seller registration, product variants, reviews, refunds, support tickets, referrals, and account management while integrating backend APIs for catalog, orders, payments, vendors, and fulfillment.
+                                </p>
+                                <p class="project-card__para">
+                                    Improved frontend performance using <strong>React.lazy/Suspense code splitting, Vite manual chunking, React Query caching, lazy-loaded images, conditional API queries, skeleton loaders, and optimized production builds</strong>, reducing unnecessary API calls and improving initial page loading and overall responsiveness.
+                                </p>
+                            </div>
+                            <button type="button" class="project-card__read-more" aria-expanded="false" aria-controls="details-nepoora">
+                                <span>Read More</span> <i class='bx bx-chevron-down'></i>
+                            </button>
                         </div>
                     </div>
+
                     <!-- Payment Reconciliation Project Card -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Payment Reconciliation</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/paymentreco.png" alt="Payment reconciliation preview"></div>
-                        <br />
-                        <div>
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
-                                Built APIs for bulk statement ingestion using batch processing to process 100K+ bank/gateway transactions efficiently.<br /><br />
-                                Developed a UTR detection algorithm from transaction descriptions using regex and automated backfill of matched transaction details.<br /><br />
-                                Implemented automated reconciliation with cron-scheduled jobs, duplicate handling, and transaction status management.<br /><br />
-                                Optimized large-data retrieval using partitioning, indexing, and pagination with both keyset and offset strategies.<br /><br />
-                                Implemented streaming exports and concurrency controls to efficiently process millions of records while preventing database conflicts and deadlocks.
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Payment Reconciliation</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/paymentreco.png" alt="Payment reconciliation preview">
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__summary">
+                                Built APIs for bulk statement ingestion using batch processing to process 100K+ bank/gateway transactions efficiently with automated reconciliation pipelines.
                             </p>
+                            <div class="project-card__details" id="details-payreco" hidden>
+                                <p class="project-card__para">
+                                    Built APIs for bulk statement ingestion using batch processing to process 100K+ bank/gateway transactions efficiently.
+                                </p>
+                                <p class="project-card__para">
+                                    Developed a UTR detection algorithm from transaction descriptions using regex and automated backfill of matched transaction details.
+                                </p>
+                                <p class="project-card__para">
+                                    Implemented automated reconciliation with cron-scheduled jobs, duplicate handling, and transaction status management.
+                                </p>
+                                <p class="project-card__para">
+                                    Optimized large-data retrieval using partitioning, indexing, and pagination with both keyset and offset strategies.
+                                </p>
+                                <p class="project-card__para">
+                                    Implemented streaming exports and concurrency controls to efficiently process millions of records while preventing database conflicts and deadlocks.
+                                </p>
+                            </div>
+                            <button type="button" class="project-card__read-more" aria-expanded="false" aria-controls="details-payreco">
+                                <span>Read More</span> <i class='bx bx-chevron-down'></i>
+                            </button>
                         </div>
                     </div>
+
                     <!-- Payment Aggregator Project Card -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Payment Aggregator</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/paymentaggregator.png" alt="Payment aggregator preview"></div>
-                        <br />
-                        <div>
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="https://dev-merchant.globleinout.com/" target="_blank" rel="noopener noreferrer">Live Link</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
-                                Built a <strong>multi-gateway Payment Aggregator</strong> enabling unified Pay-In/Pay-Out processing across <strong>fiat and crypto currency</strong>, with intelligent routing, health checks, and automatic failover.<br /><br />
-                                Implemented <strong>multi-currency wallets, double-entry ledger, settlements, automated reconciliation, and webhook processing</strong> for reliable financial transaction management.<br /><br />
-                                Developed <strong>secure multi-tenant APIs</strong> with <strong>API key/secret generation, HMAC-based webhook signature verification, KYC access control, IP whitelisting, and role-based access control</strong>.
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Payment Aggregator</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/paymentaggregator.png" alt="Payment aggregator preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://dev-merchant.globleinout.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Built a <strong>multi-gateway Payment Aggregator</strong> enabling unified Pay-In/Pay-Out processing across <strong>fiat and crypto currency</strong>, with intelligent routing, health checks, and automatic failover.
                             </p>
+                            <div class="project-card__details" id="details-payagg" hidden>
+                                <p class="project-card__para">
+                                    Built a <strong>multi-gateway Payment Aggregator</strong> enabling unified Pay-In/Pay-Out processing across <strong>fiat and crypto currency</strong>, with intelligent routing, health checks, and automatic failover.
+                                </p>
+                                <p class="project-card__para">
+                                    Implemented <strong>multi-currency wallets, double-entry ledger, settlements, automated reconciliation, and webhook processing</strong> for reliable financial transaction management.
+                                </p>
+                                <p class="project-card__para">
+                                    Developed <strong>secure multi-tenant APIs</strong> with <strong>API key/secret generation, HMAC-based webhook signature verification, KYC access control, IP whitelisting, and role-based access control</strong>.
+                                </p>
+                            </div>
+                            <button type="button" class="project-card__read-more" aria-expanded="false" aria-controls="details-payagg">
+                                <span>Read More</span> <i class='bx bx-chevron-down'></i>
+                            </button>
                         </div>
                     </div>
+
                     <!-- HRMS Project Card -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>HRMS Platform</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/hrms/companyAdmin/ca1dashboardpage.png" alt="HRMS preview"></div>
-                        <br />
-                        <div>
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="https://bitbucket.org/samratt/h-r-m-s-p-r-o-j-e-c-t/src/main/" target="_blank" rel="noopener noreferrer"> Live Link</a>
-                            </strong>
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://bitbucket.org/samratt/h-r-m-s-p-r-o-j-e-c-t/src/main/" target="_blank" rel="noopener noreferrer"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">HRMS Platform</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/hrms/companyAdmin/ca1dashboardpage.png" alt="HRMS preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://bitbucket.org/samratt/h-r-m-s-p-r-o-j-e-c-t/src/main/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                                <a href="https://bitbucket.org/samratt/h-r-m-s-p-r-o-j-e-c-t/src/main/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-git'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
                                 Designed and developed a full-fledged HRMS platform with three user dashboards – SuperAdmin, CompanyAdmin/HR, and Employee – each with role-based access control and unique workflows.
                             </p>
-                            <p>
-                                <span style="margin: 20px; font-size: small;">React.js</span>
-                                <span style="margin: 20px; font-size: small;">Node.js</span>
-                                <span style="margin: 20px; font-size: small;">Express.js</span>
-                                <span style="margin: 20px; font-size: small;">MongoDB</span>
-                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">React.js</span>
+                                <span class="project-card__tag">Node.js</span>
+                                <span class="project-card__tag">Express.js</span>
+                                <span class="project-card__tag">MongoDB</span>
+                            </div>
+                            <button type="button" class="project-card__modal-btn" id="hrms-open-modal">
+                                <span>View Screenshots</span> <i class='bx bx-images'></i>
+                            </button>
                         </div>
                     </div>
+
                     <!-- Lead Generation Project Card -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Lead Generation</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/leadgenerationproject.png" alt="Lead Generation preview"></div>
-                        <br />
-                        <div>
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="https://bitbucket.org/samratt/l-e-a-d-g-e-n-e-r-a-t-i-o-n/src/main/" target="_blank" rel="noopener noreferrer"> Live Link</a>
-                            </strong>
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://bitbucket.org/samratt/l-e-a-d-g-e-n-e-r-a-t-i-o-n/src/main/" target="_blank" rel="noopener noreferrer"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
-                                This project is a Subscription-Based Lead Generation Platform where merchants can create and embed lead forms, manage leads, and track performance under paid plans. Each plan allows one form (500 leads/month) with monthly or yearly billing via Paypal.
-                            </p>
-                            <p>
-                                <span style="margin: 20px; font-size: small;">React.js</span>
-                                <span style="margin: 20px; font-size: small;">Spring Boot</span>
-                                <span style="margin: 20px; font-size: small;">PayPal</span>
-                            </p>
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Lead Generation</h3>
                         </div>
-                    </div>
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Harigurus</strong></div>
-                        <div  class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/firstfirst (1).png" alt=""></div>
-                        <br />
-                        <div>
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="www.harigurus.com" target="_blank" rel="noopener noreferrer"> Live Link</a>
-                            </strong>
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://github.com/sahilTiwariiii/Harigurus-Project" target="_blank" rel="noopener noreferrer"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold;">
-                                Harigurus is an intuitive event booking platform I designed and developed, focused on simplifying the scheduling of spiritual and cultural services such as Mundan and Namkaran ceremonies.
-                            </p>
-                            <p>
-                               
-                                <span style="margin: 20px; font-size: small;">Node.js</span>
-                                <span style="margin: 20px; font-size: small;">React.js</span>
-                                <span style="margin: 20px; font-size: small;">React Icons</span>
-                                
-                                <span style="margin: 20px; font-size: small;">CSS</span>
-                            </p>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/leadgenerationproject.png" alt="Lead Generation preview">
                         </div>
-                    </div>
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;;">
-                        <div style="text-align: center;"><strong>MERN eCommerce Website</strong></div>
-                        <div  class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/peorra.png" alt=""></div>
-                        <br />
-                        <div>
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="https://ecomm-wjlj.onrender.com/" target="blank"> Live Link</a>
-                            </strong>
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://github.com/sahilTiwariiii/plexora" target="blank"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold;">
-                                full-featured, modern, and scalable eCommerce app built using the MERN stack (MongoDB, Express.js, React.js, and Node.js) . It includes an admin dashboard for managing products, categories, and users, along with a payment gateway integration  for smooth transactions.
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://bitbucket.org/samratt/l-e-a-d-g-e-n-e-r-a-t-i-o-n/src/main/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                                <a href="https://bitbucket.org/samratt/l-e-a-d-g-e-n-e-r-a-t-i-o-n/src/main/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-git'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Subscription-Based Lead Generation Platform where merchants can create and embed lead forms, manage leads, and track performance under paid plans with PayPal integration.
                             </p>
-                            <p>
-                                <span style="margin: 20px; font-size: small;">Node.js</span>
-                                <span style="margin: 20px; font-size: small;">React.js</span>
-                                <span style="margin: 20px; font-size: small;">MongoDB</span> <br/>
-                                <span style="margin: 20px; font-size: small;">Redux</span>
-                                <span style="margin: 20px; font-size: small;">Bootstrap</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Countrie -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;;">
-                        <div style="text-align: center;"><strong>Countries Explorer</strong></div>
-                        <div  class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/lii.png" alt=""></div>
-                        <br />
-                        <div style="text-align: center;">
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="restcountriessam.netlify.app/" target="blank"> Live Link</a>
-                            </strong>
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://github.com/sahilTiwariiii/rest-countries" target="blank"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
-                                Unlocking the power of vanilla JavaScript, it fetches and displays real-time country data without relying on any frameworks.A dynamic web app built using pure JavaScript, where you can explore detailed country information.
-                            </p>
-                            <p style="text-align:left;">
-                                <span style="margin: 20px; font-size: small;">HTML</span>
-                                <span style="margin: 20px; font-size: small;">CSS</span>
-                                <span style="margin: 20px; font-size: small;">JavaScript</span>
-                                <span style="margin: 20px; font-size: small;">API</span>
-                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">React.js</span>
+                                <span class="project-card__tag">Spring Boot</span>
+                                <span class="project-card__tag">PayPal</span>
+                            </div>
+                            <button type="button" class="project-card__modal-btn" id="leadgen-open-modal">
+                                <span>View Screenshots</span> <i class='bx bx-images'></i>
+                            </button>
                         </div>
                     </div>
 
+                    <!-- Harigurus -->
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Harigurus</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/firstfirst (1).png" alt="Harigurus preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://www.harigurus.com" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                                <a href="https://github.com/sahilTiwariiii/Harigurus-Project" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-github'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Harigurus is an intuitive event booking platform designed to simplify the scheduling of spiritual and cultural services such as Mundan and Namkaran ceremonies.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Node.js</span>
+                                <span class="project-card__tag">React.js</span>
+                                <span class="project-card__tag">React Icons</span>
+                                <span class="project-card__tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!-- Email -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;;">
-                        <div style="text-align: center;"><strong>Email Spam Classification</strong></div>
-                        <div  class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/email.png" alt=""></div>
-                        <br />
-                        <div style="text-align: center;">
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="email-spam-classifier-sahil.streamlit.app" target="blank"> Live Link</a>
-                            </strong>
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://github.com/sahilTiwariiii/Email-Spam-Classifier" target="blank"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
-                                Spam Classifier is a machine learning project that classifies emails as spam or not spam using NLP techniques. It utilizes the SMS Spam Collection Dataset to filter out unwanted messages.
+                    <!-- MERN eCommerce Website -->
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">MERN eCommerce Website</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/peorra.png" alt="MERN eCommerce preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://ecomm-wjlj.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                                <a href="https://github.com/sahilTiwariiii/plexora" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-github'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Full-featured, scalable eCommerce app built using the MERN stack. Includes an admin dashboard for managing products, categories, users, and payment gateway integration.
                             </p>
-                            <p style="text-align:left;">
-                                <span style="margin: 20px; font-size: small;">Numpy</span>
-                                <span style="margin: 20px; font-size: small;">Pandas</span>
-                                <span style="margin: 20px; font-size: small;">Python</span>
-                                <span style="margin: 20px; font-size: small;">Nlp</span>
-                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Node.js</span>
+                                <span class="project-card__tag">React.js</span>
+                                <span class="project-card__tag">MongoDB</span>
+                                <span class="project-card__tag">Redux</span>
+                                <span class="project-card__tag">Bootstrap</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- laptop -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;;">
-                        <div style="text-align: center;"><strong>Laptop Price Prediction
-                        </strong></div>
-                        <div  class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/laptop.png" alt=""></div>
-                        <br />
-                        <div>
-                            <strong style="float:left; padding-left: 10px;">
-                                <a href="https://laptop-price-predictor-wawmgvq8mkuulb4dem2jea.streamlit.app/" target="blank"> Live</a>
-                            </strong>
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://github.com/sahilTiwariiii/Laptop-Price-Predictor" target="blank"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold; text-align:left;">
-                                predicts laptop prices based on features such as brand, RAM, weight, touchscreen, CPU brand, HDD, SSD, GPU brand, and operating system.The model uses these specifications to provide accurate price estimates
-                            </p>
-                            
+
+                    <!-- Countries Explorer -->
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Countries Explorer</h3>
                         </div>
-                        <div>
-                            <span style="margin: 20px; font-size: small;">Numpy</span>
-                                <span style="margin: 20px; font-size: small;">Pandas</span>
-                                <span style="margin: 20px; font-size: small;">Python</span>
-                                <span style="margin: 20px; font-size: small;">Nlp</span>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/lii.png" alt="Countries Explorer preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://restcountriessam.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                                <a href="https://github.com/sahilTiwariiii/rest-countries" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-github'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Built using pure vanilla JavaScript, this dynamic web application fetches and displays real-time country data and details without relying on external frameworks.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">HTML</span>
+                                <span class="project-card__tag">CSS</span>
+                                <span class="project-card__tag">JavaScript</span>
+                                <span class="project-card__tag">REST API</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;;">
-                        <div style="text-align: center;"><strong>Diwali Sales Analysis</strong></div>
-                        <div  class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;"><img src="assets/img/diwa.png" alt=""></div>
-                        <br />
-                        <div>
-                           
-                            <strong style="float:right; padding-right: 10px;">
-                                <a href="https://github.com/sahilTiwariiii/Diwali-analysis" target="blank"> Source Code</a>
-                            </strong>
-                            <br />
-                            <p style="margin: 20px; font-size: small; font-weight: bold;">
-                                Analyzed Diwali sales data using Python, Pandas, and Seaborn to uncover customer behavior and product trends.Visualizes patterns in gender, age, occupation, and product preferences during the festive season.
+
+                    <!-- Email Spam Classification -->
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Email Spam Classification</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/email.png" alt="Email Spam Classification preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://email-spam-classifier-sahil.streamlit.app" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                                <a href="https://github.com/sahilTiwariiii/Email-Spam-Classifier" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-github'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Machine learning project that classifies emails as spam or not spam using NLP techniques and the SMS Spam Collection Dataset to filter unwanted messages.
                             </p>
-                            <p>
-                                <span style="margin: 20px; font-size: small;">Numpy</span>
-                                <span style="margin: 20px; font-size: small;">Pandas</span>
-                                <span style="margin: 20px; font-size: small;">Python</span>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">NumPy</span>
+                                <span class="project-card__tag">Pandas</span>
+                                <span class="project-card__tag">Python</span>
+                                <span class="project-card__tag">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Laptop Price Prediction -->
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Laptop Price Prediction</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/laptop.png" alt="Laptop Price Prediction preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://laptop-price-predictor-wawmgvq8mkuulb4dem2jea.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bx-link-external'></i> Live Link
+                                </a>
+                                <a href="https://github.com/sahilTiwariiii/Laptop-Price-Predictor" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-github'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Predicts laptop prices based on specifications like brand, RAM, weight, touchscreen, CPU/GPU brand, storage, and operating system.
                             </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">NumPy</span>
+                                <span class="project-card__tag">Pandas</span>
+                                <span class="project-card__tag">Python</span>
+                                <span class="project-card__tag">ML</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diwali Sales Analysis -->
+                    <div class="project-card work__img">
+                        <div class="project-card__header">
+                            <h3 class="project-card__title">Diwali Sales Analysis</h3>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="assets/img/diwa.png" alt="Diwali Sales Analysis preview">
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__links">
+                                <a href="https://github.com/sahilTiwariiii/Diwali-analysis" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                                    <i class='bx bxl-github'></i> Source Code
+                                </a>
+                            </div>
+                            <p class="project-card__summary">
+                                Analyzed Diwali sales data using Python, Pandas, and Seaborn to uncover customer behavior, gender, age, occupation, and product trends during the festive season.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">NumPy</span>
+                                <span class="project-card__tag">Pandas</span>
+                                <span class="project-card__tag">Python</span>
+                                <span class="project-card__tag">Seaborn</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -557,7 +659,7 @@
         <script src="https://unpkg.com/scrollreveal"></script>
 
         <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js?v=3"></script>
+        <script src="assets/js/main.js?v=10"></script>
 
         <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     </body>

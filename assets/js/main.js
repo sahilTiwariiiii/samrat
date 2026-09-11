@@ -14,33 +14,51 @@ const showMenu = (toggleId, navId) =>
 
 showMenu('nav-toggle','nav-menu');
 
-/*===== PROJECT CARD READ MORE =====*/
-(() => {
-  const projectCards = document.querySelectorAll('#project .work__container > .work__img');
+/*===== PROJECT CARD READ MORE / READ LESS TOGGLE (SINGLE-ACTIVE ACCORDION) =====*/
+document.addEventListener('click', (e) => {
+  const button = e.target.closest('.project-card__read-more');
+  if (!button) return;
+  if (button.id === 'hrms-open-modal' || button.id === 'leadgen-open-modal') return;
 
-  projectCards.forEach(card => {
-    const content = card.lastElementChild;
-    const description = content && Array.from(content.children).find(child => child.tagName === 'P');
-    if (!content || !description) return;
-    if (content.querySelector('.project-read-more')) return;
+  e.preventDefault();
+  e.stopPropagation();
 
-    card.classList.add('project-card');
-    description.classList.add('project-description');
+  const targetId = button.getAttribute('aria-controls');
+  const targetDetails = targetId ? document.getElementById(targetId) : null;
+  if (!targetDetails) return;
 
-    const readMore = document.createElement('button');
-    readMore.type = 'button';
-    readMore.className = 'project-read-more';
-    readMore.textContent = 'Read More';
-    readMore.setAttribute('aria-expanded', 'false');
-    description.insertAdjacentElement('afterend', readMore);
+  const isCurrentlyExpanded = targetDetails.classList.contains('is-active');
 
-    readMore.addEventListener('click', () => {
-      const expanded = card.classList.toggle('project-card-expanded');
-      readMore.textContent = expanded ? 'Read Less' : 'Read More';
-      readMore.setAttribute('aria-expanded', String(expanded));
-    });
+  // 1. Close ALL project details blocks across the entire projects section
+  document.querySelectorAll('.project-card__details').forEach(details => {
+    details.classList.remove('is-active');
+    details.setAttribute('hidden', '');
   });
-})();
+
+  // 2. Reset ALL read-more buttons to collapsed 'Read More' state
+  document.querySelectorAll('.project-card__read-more').forEach(btn => {
+    if (btn.id === 'hrms-open-modal' || btn.id === 'leadgen-open-modal') return;
+    btn.setAttribute('aria-expanded', 'false');
+    const span = btn.querySelector('span');
+    if (span) span.textContent = 'Read More';
+    const icon = btn.querySelector('i');
+    if (icon) icon.className = 'bx bx-chevron-down';
+  });
+
+  // 3. If clicked card was collapsed, expand ONLY this clicked card
+  if (!isCurrentlyExpanded) {
+    targetDetails.classList.add('is-active');
+    targetDetails.removeAttribute('hidden');
+    button.setAttribute('aria-expanded', 'true');
+    const span = button.querySelector('span');
+    if (span) span.textContent = 'Read Less';
+    const icon = button.querySelector('i');
+    if (icon) icon.className = 'bx bx-chevron-up';
+  }
+});
+
+
+
 
 
 /*===== ACTIVE AND REMOVE MENU =====*/
