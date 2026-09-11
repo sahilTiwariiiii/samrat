@@ -12,7 +12,35 @@ const showMenu = (toggleId, navId) =>
     }
 }
 
-showMenu('nav-toggle','nav-menu')
+showMenu('nav-toggle','nav-menu');
+
+/*===== PROJECT CARD READ MORE =====*/
+(() => {
+  const projectCards = document.querySelectorAll('#project .work__container > .work__img');
+
+  projectCards.forEach(card => {
+    const content = card.lastElementChild;
+    const description = content && Array.from(content.children).find(child => child.tagName === 'P');
+    if (!content || !description) return;
+    if (content.querySelector('.project-read-more')) return;
+
+    card.classList.add('project-card');
+    description.classList.add('project-description');
+
+    const readMore = document.createElement('button');
+    readMore.type = 'button';
+    readMore.className = 'project-read-more';
+    readMore.textContent = 'Read More';
+    readMore.setAttribute('aria-expanded', 'false');
+    description.insertAdjacentElement('afterend', readMore);
+
+    readMore.addEventListener('click', () => {
+      const expanded = card.classList.toggle('project-card-expanded');
+      readMore.textContent = expanded ? 'Read Less' : 'Read More';
+      readMore.setAttribute('aria-expanded', String(expanded));
+    });
+  });
+})();
 
 
 /*===== ACTIVE AND REMOVE MENU =====*/
